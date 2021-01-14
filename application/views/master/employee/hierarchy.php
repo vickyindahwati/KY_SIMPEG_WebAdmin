@@ -1,0 +1,2 @@
+<iframe src="http://localhost:8081/KomisiYudisial/simpeg/orgchart/index.php?id=<?php echo $xUnorId; ?>" width="100%" height="600"></iframe>
+<script src="<?php echo base_url('static');?>/custom/global_constanta.js"></script>
