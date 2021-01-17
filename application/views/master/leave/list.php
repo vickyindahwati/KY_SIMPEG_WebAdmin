@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="<?php echo base_url('static');?>/plugins/datepicker/datepicker3.css">
 
 <input type="hidden" class="form-control" id="x_holiday_date" name="x_holiday_date">
+<input type="hidden" class="form-control" id="x_leave_id" name="x_leave_id" value="<?php echo $xLeaveId; ?>">
 
 <!-- Start : Modal Form -->
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="modal-loader" data-backdrop="static" data-keyboard="false">
@@ -60,6 +61,7 @@
             </div>
             <form class="form-horizontal" id="frm-confirm-cancel-leave" name="frm-confirm-cancel-leave">
                 <input type="hidden" id="x_confirm_cancel_id" name="x_confirm_cancel_id">
+                <input type="hidden" id="x_confirm_cancel_nid" name="x_confirm_cancel_nid" value="<?php echo $xNid ?>">
                 <div class="modal-body" id="modal-body-confirm-msg">
                     Apakah anda yakin ingin membatalkan cuti anda?
                 </div>
@@ -202,6 +204,7 @@
             </div>            
             <form id="form-receive-request-leave" name="form-receive-request-leave" class="form-horizontal">
                 <input type="hidden" name="x_id_leave" id="x_id_leave">
+                <input type="hidden" name="x_nid" id="x_nid" value="<?php echo $xNid; ?>">
                 <div class="modal-body">
                     <div class="box box-primary">
                         <div class="box-body">                            

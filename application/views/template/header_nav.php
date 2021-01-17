@@ -82,47 +82,34 @@
         <!-- /.navbar-collapse -->
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="<?php echo base_url();?>index.php/login/logout" >Logout</a>
-            </li>
-            <?php /*
+          <ul class="nav navbar-nav">            
+            
             <!-- Messages: style can be found in dropdown.less-->
             <li class="dropdown messages-menu">
               <!-- Menu toggle button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
-                <span class="label label-success">4</span>
+                <span class="label label-success" id="container-total-pending-leave"></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 4 messages</li>
+                <li class="header" id="container-message-title"></li>
                 <li>
                   <!-- inner menu: contains the messages -->
-                  <ul class="menu">
-                    <li><!-- start message -->
-                      <a href="#">
-                        <div class="pull-left">
-                          <!-- User Image -->
-                          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        </div>
-                        <!-- Message title and timestamp -->
-                        <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <!-- The message -->
-                        <p>Why not buy a new awesome theme?</p>
-                      </a>
-                    </li>
+                  <ul class="menu" id="container-message-list">                    
                     <!-- end message -->
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
+                <!--li class="footer"><a href="<?php echo base_url(); ?>index.php/leave">See All Messages</a></li-->
               </ul>
             </li>
             <!-- /.messages-menu -->
 
+            <li>
+              <a href="<?php echo base_url();?>index.php/login/logout" >Logout</a>
+            </li>
+
+            <?php /*
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
               <!-- Menu toggle button -->
@@ -238,3 +225,47 @@
     </nav>    
 
   </header>
+
+  <script>
+    function getInAppNotification(){
+      $.ajax({
+
+        type        : 'GET',
+        url         : indexURL + '/inappnotification/getNotification',
+        data        : {},
+        dataType    : 'json',
+        crossDomain : true,
+        success     : function(data){ 
+                        console.log(JSON.stringify(data)) ;
+                        $('#container-message-title').html('Anda memiliki <strong>' + data.total_record + '</strong> permintaan baru');
+                        $('#container-total-pending-leave').html(data.total_record);
+
+                        var xContainerMessageList = '';
+
+                        if( data.status_code == '00' ){
+                          if( data.total_record > 0 ){
+                            var xRows = data.data;
+                            for( var i = 0; i < data.total_record; i++ ){
+                              if( xRows[i].module == 'leave' ){
+                                xContainerMessageList += '<li><a href="<?php echo base_url(); ?>index.php/leave?id=' + xRows[i].record_id + '&nid=' + xRows[i].id + '"><h4><strong>Pengajuan Cuti</strong><small><i class="fa fa-clock-o"></i> ' + xRows[i].created_at + '</small></h4><p>' + xRows[i].name + '<br>mengajukan cuti <strong>' + xRows[i].reference_no + '</strong></p></a></li>';
+                              }else if( xRows[i].module == 'update_profile' ){
+                                xContainerMessageList += '<li><a href="<?php echo base_url(); ?>index.php/profile?id=' + xRows[i].record_id + '&nid=' + xRows[i].id + '"><h4><strong>Perubahan Profil</strong><small><i class="fa fa-clock-o"></i> ' + xRows[i].created_at + '</small></h4><p>' + xRows[i].name + '<br>mengajukan perubahan profil</p></a></li>';
+                              }    
+                            }
+                            $('#container-message-list').html(xContainerMessageList);
+                          }
+                          
+                        }else{
+                          $('#container-message-list').html('<li><h4>Tidak ada data pengajuan baru</h4></li>');
+                        }
+                        
+
+                      }
+
+      });
+    }
+
+    $(document).ready(function(){
+      getInAppNotification();
+    })
+  </script>

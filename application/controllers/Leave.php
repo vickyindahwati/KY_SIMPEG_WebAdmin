@@ -18,6 +18,7 @@ class Leave extends CI_Controller{
     $this->ci->load->library('api/profile_lib');
 		$this->ci->load->library('api/employee_lib');
     $this->ci->load->library('api/master_lib');
+    $this->ci->load->library('api/inappnotification_lib');
     $this->ci->load->library('global_lib');
     $this->ci->load->library('export_lib');
     $this->load->library('ciqrcode');
@@ -67,7 +68,9 @@ class Leave extends CI_Controller{
 
       		$data['rsTujuanJabatan'] = $this->master_lib->getMaster("tujuan_jabatan");
       		$data['rsJenisCuti'] = $this->master_lib->getMaster("jenis_cuti");
-      		$data['rsAnualLeaveInfo'] = $this->employee_lib->getAnualLeaveInfo( $this->_xEncUserId );
+          $data['rsAnualLeaveInfo'] = $this->employee_lib->getAnualLeaveInfo( $this->_xEncUserId );
+          $data['xLeaveId'] = $this->input->get('id');
+          $data['xNid'] = $this->input->get('nid');
         	$template['konten'] = $this->load->view('master/leave/list', $data, true);
         	#load container for template view        
        
@@ -83,6 +86,7 @@ class Leave extends CI_Controller{
 
 	public function showLeaveTableList(){
     $data = array();
+    $data['xLeaveId'] = $this->input->post('id');
     //$data['']
   	$this->load->view('master/leave/data', $data);
   }
@@ -102,6 +106,7 @@ class Leave extends CI_Controller{
     $xJenisCutiId = $this->input->post('jenis_cuti');
 
     $jsonResult = $this->ci->employee_lib->getLeaveTableData( $xModule,
+                                                              $xId,
       			                                                   $this->_xEncUserId,
                                                                $this->_xRoleId,
       			                                                   str_replace(" ", "%20", $xKeyword['value']),
@@ -196,6 +201,7 @@ class Leave extends CI_Controller{
 
     $xArrResult = array();
     $xId = $this->input->post('x_id_leave');
+    $xNid = $this->input->post('x_nid');
 
     $xTglMulai = $this->input->post('x_receive_leave_tgl_mulai');
     $xTglBerakhir = $this->input->post('x_receive_leave_tgl_berakhir');
@@ -205,7 +211,7 @@ class Leave extends CI_Controller{
     $xKeputusanPejabat = $this->input->post('x_receive_leave_keputusan_pejabat');
     $xCatatanCuti = $this->input->post('x_receive_leave_catatan_cuti');
 
-    $xArrResult = $this->ci->employee_lib->updateStatusLeave( $xId,
+    $xObjResult = $this->ci->employee_lib->updateStatusLeave( $xId,
                                                               $this->_xUserId,
 
                                                               $xTglMulai,
@@ -215,10 +221,12 @@ class Leave extends CI_Controller{
                                                               $xPertimbanganAtasanLangsung,
                                                               $xKeputusanPejabat,
                                                               $xCatatanCuti );
+
+    $this->ci->inappnotification_lib->updateFlagProcessedNotification( $xNid, 'leave' );
     
     $this->output
       ->set_content_type('application/json')
-      ->set_output($xArrResult);
+      ->set_output($xObjResult);
   }
 
   public function saveChangeLeave(){
@@ -247,9 +255,11 @@ class Leave extends CI_Controller{
 
     $xArrResult = array();
     $xId = $this->input->post('x_confirm_cancel_id');
+    $xNid = $this->input->post('x_confirm_cancel_nid');
 
     $xArrResult = $this->ci->employee_lib->cancelLeave( $xId,
                                                         $this->_xUserId );
+    $this->ci->inappnotification_lib->updateFlagProcessedNotification( $xNid, 'leave' );                                                        
     
     $this->output
       ->set_content_type('application/json')
@@ -276,6 +286,16 @@ class Leave extends CI_Controller{
   public function showLeaveDetail(){
     $data = array();
     $this->load->view('master/leave/receive_leave_detail', $data);
+  }
+
+  // Before for inapp notification
+  public function getPendingLeave(){
+    $xCurrDate = date('Y-m-d');
+    $xCurrDate = 'all';
+    $xJsonResult = $this->ci->employee_lib->getPendingLeave( $xCurrDate );
+    $this->output
+        ->set_content_type('application/json')
+        ->set_output($xJsonResult);
   }
 
 }

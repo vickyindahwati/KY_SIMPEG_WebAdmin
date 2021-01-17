@@ -59,8 +59,6 @@ $route['family/load.table']				= 'family/tableView';
 $route['family/load.family.data']		= 'family/getFamilyData';
 $route['family/do.save']				= 'family/save';
 
-
-
 $route['404_override'] 				= '';
 $route['translate_uri_dashes'] 		= FALSE;
 

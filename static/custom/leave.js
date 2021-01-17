@@ -20,7 +20,9 @@ function disabledForm( pElementId, pVal ){
 
 $(document).ready(function(){
     
-    loadListPage('POST','');
+    var xLeaveId = $('#x_leave_id').val();
+    loadListPage('POST','id=' + xLeaveId);
+    
     $('#x_tgl_mulai, #x_tgl_berakhir, #x_search_tgl_mulai_cuti, #x_search_tgl_berakhir_cuti,#x_receive_leave_tgl_mulai_change,#x_receive_leave_tgl_berakhir_change, #x_receive_leave_tgl_mulai,#x_receive_leave_tgl_berakhir').datepicker({
       autoclose: true
     });
@@ -72,8 +74,9 @@ $(document).ready(function(){
                     url         : indexURL + '/leave/saveLeave',
                     data        : $('#form-request-leave').serialize(),
                     dataType    : 'json',
-                    beforeSend  : function(){ /*disabledForm('form-submit-payment');*/$('#modal-loader').modal('show'); },
+                    beforeSend  : function(){ disabledForm('form-request-leave', true);$('#modal-loader').modal('show'); },
                     success     : function(data){        
+                                    disabledForm('form-request-leave', false); 
                                     $('#modal-loader').modal('hide');   
                                     $('#modal-form-request-leave').modal('hide');                                                                       
 
@@ -106,8 +109,9 @@ $(document).ready(function(){
                     url         : indexURL + '/leave/updateStatusLeave',
                     data        : $('#form-receive-request-leave').serialize(),
                     dataType    : 'json',
-                    beforeSend  : function(){ /*disabledForm('form-submit-payment');*/$('#modal-loader').modal('show'); },
-                    success     : function(data){        
+                    beforeSend  : function(){ disabledForm('form-receive-request-leave', true);$('#modal-loader').modal('show'); },
+                    success     : function(data){       
+                                    disabledForm('form-receive-request-leave', false); 
                                     $('#modal-loader').modal('hide');                                    
                                     $('#modal-form-receive-request-leave').modal('hide');
                                     if( data.status_code == '00' ){                                           
@@ -118,7 +122,7 @@ $(document).ready(function(){
                                         $('#modal-message').modal('show');
                                         $('#container-popup-message').html('<div class="text-center"><i class="fa fa-times-circle fa-5x" style="color:red"></i><br><h3>' + data.status_msg  + '</h3></div>');
                                     }                                
-
+                                    getInAppNotification();
                                 }
 
                 });
@@ -151,7 +155,7 @@ $(document).ready(function(){
                                         $('#modal-message').modal('show');
                                         $('#container-popup-message').html('<div class="text-center"><i class="fa fa-times-circle fa-5x" style="color:red"></i><br><h3>' + data.status_msg  + '</h3></div>');
                                     }                                
-
+                                    getInAppNotification();
                                 }
 
                 });

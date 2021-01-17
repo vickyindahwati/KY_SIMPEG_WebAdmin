@@ -148,8 +148,9 @@ function getHolidayDate(pUrl){
 		url         : pUrl + '/calendar/getHolidayDate',
 		crossDomain : true,
 		dataType    : 'json',
-		beforeSend  : function(){ $('#container-loader-list').show(); },
+		beforeSend  : function(){ /*$('#container-loader-list').show();*/ },
 		success     : function(data){ 
+						/*$('#container-loader-list').hide();*/
 						$('#x_holiday_date').val(JSON.stringify(data.data));
 					  }        
 	});

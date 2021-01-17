@@ -86,7 +86,9 @@ $(document).ready(function(){
                                         $('#modal-confirm-user, #modal-update-data-pending').modal('hide');
                                         $('#modal-message').modal('show');
                                         $('#container-popup-message').html('<div class="text-center"><i class="fa fa-times-circle fa-5x" style="color:red"></i><br><h3>' + data.status_msg  + '</h3></div>');
-                                    }                                
+                                    }  
+                                    
+                                    getInAppNotification();
 
                                 }
 

@@ -17,6 +17,7 @@ class Profile extends CI_Controller{
 		$this->ci->load->library('api/profile_lib');
 		$this->ci->load->library('api/employee_lib');
 		$this->ci->load->library('api/master_lib');
+		$this->ci->load->library('api/inappnotification_lib');
 		$this->ci->load->library('upload_file');
 		$this->load->library('acl');
 
@@ -67,6 +68,7 @@ class Profile extends CI_Controller{
 				}
 			}
 
+			$data['nid'] = $this->input->get('nid');
 			$template['konten'] = $this->load->view('profile', $data, true);
 			#load container for template view
 			$this->load->view('template/container',$template);
@@ -113,13 +115,16 @@ class Profile extends CI_Controller{
 
 		$xArrResult = array();
 		$xId = $this->input->post('x_confirm_id');
+		$xNid = $this->input->post('x_nid');
 		$xType = $this->input->post('x_confirm_type');
 		$xReason = $this->input->post('x_reason');
 
-		$xArrResult = $this->ci->profile_lib->confirmUpdateProfile( $xId, $xType, $xReason, $this->_xEncUserId );
+		$xObjResult = $this->ci->profile_lib->confirmUpdateProfile( $xId, $xType, $xReason, $this->_xEncUserId );
+		$this->ci->inappnotification_lib->updateFlagProcessedNotification( $xNid, 'update_profile' );
+
 		$this->output
         	->set_content_type('application/json')
-        	->set_output($xArrResult);
+        	->set_output($xObjResult);
 	}
 
 	public function uploadPhoto(){

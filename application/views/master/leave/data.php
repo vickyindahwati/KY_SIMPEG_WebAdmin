@@ -3,6 +3,8 @@
 
 <div class="box-body">
 
+    <input id="x_leave_id" name="x_leave_id" type="hidden" class="form-control" value="<?php echo $xLeaveId; ?>">
+
     <table id="dt-table" class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -53,7 +55,7 @@
             "ajax":{
                 "url": indexURL + "/leave/getLeaveDataTableList",
                 "type": "POST",
-                "data":{"module":"\/user\/leave", "status":$('#x_search_status_leave').val(), "tgl_mulai_cuti":$('#x_search_tgl_mulai_cuti').val(), "tgl_berakhir_cuti": $('#x_search_tgl_berakhir_cuti').val(), "jenis_cuti": $('#x_search_jenis_cuti').val()}
+                "data":{"id": $('#x_leave_id').val(),"module":"\/user\/leave", "status":$('#x_search_status_leave').val(), "tgl_mulai_cuti":$('#x_search_tgl_mulai_cuti').val(), "tgl_berakhir_cuti": $('#x_search_tgl_berakhir_cuti').val(), "jenis_cuti": $('#x_search_jenis_cuti').val()}
             },
             "columns":[
                 { "data": "no_reference" },

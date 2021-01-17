@@ -11,6 +11,7 @@ class Employee_lib
 
         $this->apiUrl = $this->ci->config->item("API_URL");
         $this->_xToken = $this->ci->session->userdata['SESSION_SIMPEG_E'];
+        $this->apiUrl_V2 = $this->ci->config->item("API_URL_V2");
     }
 
     public function getEmployeeList( $pUserId, $pKeyword, $pLimit, $pOffset, $pDraw, $pType ){
@@ -833,8 +834,8 @@ class Employee_lib
         return $xAPIResult;
     }
 
-    public function getLeaveTableData( $pModule, $pUserId, $pRoleId, $pKeyword, $pStatus, $pTglMulai, $pTglBerakhir, $pJenisCuti, $pLimit, $pOffset, $pDraw, $pOrderColumn, $pOrderDir ){
-        $xURLAPI = $this->apiUrl . $pModule . "?id=" . $pUserId . "&role_id=" . $pRoleId . "&jenis_cuti=" . $pJenisCuti . "&keyword=" . $pKeyword . "&status=" . $pStatus . "&tgl_mulai=" . $pTglMulai . "&tgl_berakhir=" . $pTglBerakhir . "&offset=" . $pOffset . "&limit=" . $pLimit . "&draw=" . $pDraw . "&order_col=" . $pOrderColumn . "&order_dir=" . $pOrderDir;
+    public function getLeaveTableData( $pModule, $pEncryptedId,$pUserId, $pRoleId, $pKeyword, $pStatus, $pTglMulai, $pTglBerakhir, $pJenisCuti, $pLimit, $pOffset, $pDraw, $pOrderColumn, $pOrderDir ){
+        $xURLAPI = $this->apiUrl . $pModule . "?encrypted_id=" . $pEncryptedId . "&id=" . $pUserId . "&role_id=" . $pRoleId . "&jenis_cuti=" . $pJenisCuti . "&keyword=" . $pKeyword . "&status=" . $pStatus . "&tgl_mulai=" . $pTglMulai . "&tgl_berakhir=" . $pTglBerakhir . "&offset=" . $pOffset . "&limit=" . $pLimit . "&draw=" . $pDraw . "&order_col=" . $pOrderColumn . "&order_dir=" . $pOrderDir;
         //echo ">>> API : " . $xURLAPI;
         $xArrHeader = array(                                                                          
             'Content-Type: application/json',
@@ -994,6 +995,17 @@ class Employee_lib
         //echo $xURLAPI;
         return json_decode($xAPIResult,true);
 
+    }
+
+    // Before for inapp notification
+    public function getPendingLeave( $pLeaveDate ){
+        $xURLAPI = $this->apiUrl_V2 . "/leave/list?leave_date=" . $pLeaveDate . "&status=0";
+        $xArrHeader = array(                                                                          
+            'Content-Type: application/json',
+            'x-method: simpeg',
+        );
+        $xAPIResult = $this->ci->curl->sendAPI($xURLAPI, json_encode($xParam), "GET", $xArrHeader);
+        return $xAPIResult;
     }
 
     public function doChangePassword( $pId, $pOldPassword, $pNewPassword ){

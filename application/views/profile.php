@@ -99,6 +99,7 @@
                 </div>
                 <form class="form-horizontal" id="form-confirm-user" name="form-confirm-user">
                     <input type="hidden" id="x_confirm_id" name="x_confirm_id">
+                    <input type="hidden" id="x_nid" name="x_nid" value="<?php echo $nid; ?>">
                     <input type="hidden" id="x_confirm_type" name="x_confirm_type">
                     <div class="modal-body" id="modal-body-confirm-msg"></div>
                     <div class="overlay" id="container-loader-confirm" style="display:none;">
