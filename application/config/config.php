@@ -24,7 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = "http://".$_SERVER['HTTP_HOST']."/KomisiYudisial/simpeg/admin/";
-$config['base_url'] = "http://localhost:80/KY_SIMPEG_WebAdmin/";
+// $config['base_url'] = "http://localhost:80/KY_SIMPEG_WebAdmin/";
+$config['base_url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/';
 
 
 
