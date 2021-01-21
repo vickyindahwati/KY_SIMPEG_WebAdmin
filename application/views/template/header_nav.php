@@ -61,6 +61,7 @@
               
 
               <?php if( $this->session->userdata['SESSION_SIMPEG_D'] != 1 && $this->session->userdata['SESSION_SIMPEG_D'] != 3 ){ ?>
+                <li><a href="<?php echo base_url();?>index.php/calendar">Kalender Libur</a></li>
                 <?php /*
                 <li>
                   <a href="<?php echo base_url();?>index.php/profile?id=<?php echo $this->session->userdata['SESSION_SIMPEG_G']; ?>" >Profil</a>
