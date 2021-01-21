@@ -38,6 +38,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">                
+                <li><a href="<?php echo base_url();?>index.php/calendar">Kalender Libur</a></li>
                   <li><a href="<?php echo base_url();?>index.php/unor">Unit Organisasi</a></li>
                   <li><a href="<?php echo base_url();?>index.php/userunor/header">Peta Jabatan</a></li>
                 </ul>
