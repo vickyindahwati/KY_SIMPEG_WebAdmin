@@ -86,26 +86,28 @@
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">            
             
-            <!-- Messages: style can be found in dropdown.less-->
-            <li class="dropdown messages-menu">
-              <!-- Menu toggle button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-envelope-o"></i>
-                <span class="label label-success" id="container-total-pending-leave"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header" id="container-message-title"></li>
-                <li>
-                  <!-- inner menu: contains the messages -->
-                  <ul class="menu" id="container-message-list">                    
-                    <!-- end message -->
-                  </ul>
-                  <!-- /.menu -->
-                </li>
-                <!--li class="footer"><a href="<?php echo base_url(); ?>index.php/leave">See All Messages</a></li-->
-              </ul>
-            </li>
-            <!-- /.messages-menu -->
+            <?php if( $this->session->userdata['SESSION_SIMPEG_D'] == 1 || $this->session->userdata['SESSION_SIMPEG_D'] == 3 ){ ?>
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <!-- Menu toggle button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success" id="container-total-pending-leave"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header" id="container-message-title"></li>
+                  <li>
+                    <!-- inner menu: contains the messages -->
+                    <ul class="menu" id="container-message-list">                    
+                      <!-- end message -->
+                    </ul>
+                    <!-- /.menu -->
+                  </li>
+                  <!--li class="footer"><a href="<?php echo base_url(); ?>index.php/leave">See All Messages</a></li-->
+                </ul>
+              </li>
+              <!-- /.messages-menu -->
+            <?php }?>
 
             <li>
               <a href="<?php echo base_url();?>index.php/login/logout" >Logout</a>
