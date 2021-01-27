@@ -35,7 +35,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.2
     </div>
-    <!--strong>Copyright &copy; 2014-2015 <a href="#">SIMPEG-Back Office System</a>.</strong> All rights reserved. -->
+    <strong>Copyright &copy; 2018 <a href="#">SIMPEG-Back Office System</a>.</strong> All rights reserved.
     </footer>
 
     
