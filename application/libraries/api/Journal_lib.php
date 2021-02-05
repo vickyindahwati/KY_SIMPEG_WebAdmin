@@ -14,15 +14,25 @@ class Journal_lib
     }
 
     public function getJournalList( $pUserId, $pRoleId, $pKeyword, $pTglJournal, $pUnorInduk, $pLimit, $pOffset, $pDraw, $pOrderColumn, $pOrderDir ){
-        $xURLAPI = $this->apiUrl . "/journal/list?id=" . $pUserId . "&keyword=" . $pKeyword . "&offset=" . $pOffset . "&limit=" . $pLimit . "&draw=" . $pDraw . "&tgl_jurnal=" . $pTglJournal . "&unor_induk_id=" . $pUnorInduk . "&role_id=" . $pRoleId . "&order_col=" . $pOrderColumn . "&order_dir=" . $pOrderDir;;
-        //echo ">>> API : " . $xURLAPI;
+        $xURLAPI = $this->apiUrl . "/journal/list?id=" . $pUserId . "&keyword=" . $pKeyword . "&offset=" . $pOffset . "&limit=" . $pLimit . "&draw=" . $pDraw . "&tgl_jurnal=" . urlencode($pTglJournal) . "&unor_induk_id=" . $pUnorInduk . "&role_id=" . $pRoleId . "&order_col=" . $pOrderColumn . "&order_dir=" . $pOrderDir;;
+        // echo ">>> API : " . $xURLAPI;
         $xArrHeader = array(                                                                          
             'Content-Type: application/json',
             'X-ID: ' . $pAdminId,
             'Authorization: Bearer ' . $this->_xToken
         );
-        $xAPIResult = $this->ci->curl->sendAPI($xURLAPI, json_encode($xParam), "GET", $xArrHeader);
-        return ($xAPIResult);
+        // echo "<br>";
+        // echo "X-ID : " . $pAdminId . "<br>"; 
+        // echo "Auth : " . $this->_xToken;
+        try{
+            // echo ">>> Here 1 <br>";
+            $xAPIResult = $this->ci->curl->sendAPI($xURLAPI, "", "GET", $xArrHeader);
+            // echo ">>> Here 2 : " . $xAPIResult . "<br>";
+            return ($xAPIResult);
+        }catch( Exception $e ){
+            echo ">>> Caught Exception : " . $e->getMessage();
+        }
+        
     }
 
     public function saveJournal( $pUserId, $pJournalDate, $pSubject, $pBody ){
