@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.28.201',
+	'hostname' => '192.168.28.200',
 	'port' => 9000,
 	'username' => 'peter',
-	'password' => '#@kjdnf(*d581345',
-	'database' => 'komisiyu_simpeg_new_db',
+	'password' => 'rB-*MA7awR1RyDu',
+	'database' => 'komisiyu_prod_simpeg',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
