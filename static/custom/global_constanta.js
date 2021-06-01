@@ -1,3 +1,3 @@
-var indexURL = 'http://localhost/KY_SIMPEG_WebAdmin/index.php';
+var indexURL = 'http://simpeg.komisiyudisial.go.id/index.php';
 var dataSeparator = 'Þ';
-var pathPhotoProfile = 'http://localhost/KY_SIMPEG_WebAdmin/uploads/photos/profile/original/';
+var pathPhotoProfile = 'http://simpeg.komisiyudisial.go.id/uploads/photos/profile/original/';
