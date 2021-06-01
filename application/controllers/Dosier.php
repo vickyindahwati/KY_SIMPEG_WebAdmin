@@ -34,15 +34,18 @@ class Dosier extends CI_Controller{
     	$setting = "";
       	$template = $this->template->load($setting);        
 
-      	if( $this->ci->acl->has_permission('DOSIER') ){
+      	// if( $this->ci->acl->has_permission('DOSIER') ){
       		
-        	$template['konten'] = $this->load->view('master/dosier/list', $data, true);
-        	#load container for template view        
+        // 	$template['konten'] = $this->load->view('master/dosier/list', $data, true);
+        // 	#load container for template view        
        
-      	}else{
-        	$data = array('title' => 'Pesan Peringatan', 'content' => 'Anda tidak memiliki akses ke halaman ini');
-        	$template['konten'] = $this->load->view('errors/no_permission', $data, true);
-      	}
+      	// }else{
+        // 	$data = array('title' => 'Pesan Peringatan', 'content' => 'Anda tidak memiliki akses ke halaman ini');
+        // 	$template['konten'] = $this->load->view('errors/no_permission', $data, true);
+      	// }
+
+		  $template['konten'] = $this->load->view('master/dosier/list', $data, true);
+        	#load container for template view 
              
       	$this->load->view('template/container',$template);
 
