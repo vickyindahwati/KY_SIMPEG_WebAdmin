@@ -3,7 +3,7 @@
 
 <div class="box-body">
 
-    <table id="dt-table" class="table table-bordered table-striped">
+    <table id="dt-table" class="table table-bordered table-striped" style="width:100%;">
         <thead>
             <tr>
                 <th>No.</th>
