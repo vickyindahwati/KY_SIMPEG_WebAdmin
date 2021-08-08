@@ -137,7 +137,7 @@
 <script src="<?php echo base_url('static')?>/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- bootstrap datepicker -->
 <script src="<?php echo base_url('static');?>/plugins/datepicker/bootstrap-datepicker.js"></script>
-<script src="http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
+<script src="https://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
 <script src="<?php echo base_url('static');?>/custom/unor.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
