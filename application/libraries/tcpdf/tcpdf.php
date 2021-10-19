@@ -6874,7 +6874,18 @@ class TCPDF {
 				$file = $original_file;
 			}
 		}
-		if ($imsize === FALSE) {
+		// if ($imsize === FALSE) {
+		// 	if (($w > 0) AND ($h > 0)) {
+		// 		// get measures from specified data
+		// 		$pw = $this->getHTMLUnitToUnits($w, 0, $this->pdfunit, true) * $this->imgscale * $this->k;
+		// 		$ph = $this->getHTMLUnitToUnits($h, 0, $this->pdfunit, true) * $this->imgscale * $this->k;
+		// 		$imsize = array($pw, $ph);
+		// 	} else {
+		// 		$this->Error('[Image] Unable to get the size of the image: '.$file);
+		// 	}
+		// }
+
+		if ($imsize === TRUE) {
 			if (($w > 0) AND ($h > 0)) {
 				// get measures from specified data
 				$pw = $this->getHTMLUnitToUnits($w, 0, $this->pdfunit, true) * $this->imgscale * $this->k;
