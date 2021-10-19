@@ -193,7 +193,8 @@ class Leave extends CI_Controller{
       // echo FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
 
       if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg' ) ){
-        $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.jpg';
+        // $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.jpg';
+        $pathQRCode = '/var/www/simpeg/KY_SIMPEG_WebAdmin/uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg';
       }
 
       // echo "<br><br>" . $pathQRCode;
