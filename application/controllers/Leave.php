@@ -190,6 +190,8 @@ class Leave extends CI_Controller{
       $arrQRCodeParam['size']   = 1024;
       $this->ciqrcode->generate( $arrQRCodeParam );
 
+      echo FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';break;
+
       if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png' ) ){
         $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
       }
