@@ -16,8 +16,6 @@ class Export_lib {
 
     	//var_dump($pLeaveDetail);
 
-		echo ">>> Path : " . $pPathQRCode;
-
     	$xBackgroundColor = '';
     	$xLabelStatus = '';
 
