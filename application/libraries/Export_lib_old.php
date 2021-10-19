@@ -92,21 +92,21 @@ class Export_lib {
 					</tr>
 					<tr>
 						<td style="text-align:left;" width="30%">Cuti Tahunan</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 1 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 1 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 						<td style="text-align:left;" width="30%">Cuti Besar</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 2 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 2 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 					</tr>
 					<tr>
 						<td style="text-align:left;" width="30%">Cuti Sakit</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 3 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 3 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 						<td style="text-align:left;" width="30%">Cuti Melahirkan</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 4 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 4 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 					</tr>
 					<tr>
 						<td style="text-align:left;" width="30%">Cuti Karena Alasan Penting</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 5 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 5 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 						<td style="text-align:left;" width="30%">Cuti Di Luar Tanggungan Negara</td>
-						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 6 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;" width="20%">' . ( $pLeaveDetail['jenis_cuti']['id'] == 6 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 					</tr>
 				  </table><br><br>';
 
@@ -200,10 +200,10 @@ class Export_lib {
 						<td style="text-align:center;">TIDAK DISETUJUI****</td>
 					</tr>
 					<tr>
-						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 1 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 2 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 3 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 4 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 1 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 2 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 3 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['pertimbangan_atasan_langsung'] == 4 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 					</tr>
 				  </table><br>';
 
@@ -235,10 +235,10 @@ class Export_lib {
 						<td style="text-align:center;">TIDAK DISETUJUI****</td>
 					</tr>
 					<tr>
-						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 1 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 2 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 3 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
-						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 4 ? '<img src="' . CONST_IMG_ASSET . 'dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 1 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 2 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 3 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
+						<td style="text-align:center;">' . ( $pLeaveDetail['keputusan_pejabat'] == 4 ? '<img src="' . base_url('static') . '/dist/img/check_list.png" width="10"/>' : '' ) . '</td>
 					</tr>
 				  </table><br>';
 
