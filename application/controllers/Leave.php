@@ -196,6 +196,8 @@ class Leave extends CI_Controller{
         $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
       }
 
+      echo "<br><br>" . $pathQRCode;
+
       $this->ci->export_lib->exportLeaveForm( $rsLeaveDetail, $rsUserAnualLeaveDetail, $rsLastLeaveNote['catatan_cuti'], $pathQRCode );
     } catch (Exception $ex) {
       echo ">>> Exception : " . $ex->getMessage();
