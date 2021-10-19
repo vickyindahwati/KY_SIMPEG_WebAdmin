@@ -177,23 +177,27 @@ class Leave extends CI_Controller{
   }
 
   public function generateForm(){
+    
+    try {
+      $xId = $this->uri->segment(3);
+      $rsLeaveDetail = $this->ci->employee_lib->getLeaveDetail( $xId );
+      $rsUserAnualLeaveDetail = $this->employee_lib->getAnualLeaveInfo( $rsLeaveDetail['user_id'] );
+      $rsLastLeaveNote = $this->employee_lib->getLastLeaveNote( $xId, $this->_xEncUserId, $rsLeaveDetail['jenis_cuti']['id'] );
 
-    $xId = $this->uri->segment(3);
-    $rsLeaveDetail = $this->ci->employee_lib->getLeaveDetail( $xId );
-    $rsUserAnualLeaveDetail = $this->employee_lib->getAnualLeaveInfo( $rsLeaveDetail['user_id'] );
-    $rsLastLeaveNote = $this->employee_lib->getLastLeaveNote( $xId, $this->_xEncUserId, $rsLeaveDetail['jenis_cuti']['id'] );
+      /*Generate QRCode*/
+      $arrQRCodeParam['data']   = $rsLeaveDetail['no_reference'];
+      $arrQRCodeParam['savename'] = FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
+      $arrQRCodeParam['size']   = 1024;
+      $this->ciqrcode->generate( $arrQRCodeParam );
 
-    /*Generate QRCode*/
-    $arrQRCodeParam['data']   = $rsLeaveDetail['no_reference'];
-    $arrQRCodeParam['savename'] = FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
-    $arrQRCodeParam['size']   = 1024;
-    $this->ciqrcode->generate( $arrQRCodeParam );
+      if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png' ) ){
+        $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
+      }
 
-    if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png' ) ){
-      $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
-    }
-
-    $this->ci->export_lib->exportLeaveForm( $rsLeaveDetail, $rsUserAnualLeaveDetail, $rsLastLeaveNote['catatan_cuti'], $pathQRCode );    
+      $this->ci->export_lib->exportLeaveForm( $rsLeaveDetail, $rsUserAnualLeaveDetail, $rsLastLeaveNote['catatan_cuti'], $pathQRCode );
+    } catch (Exception $ex) {
+      echo ">>> Exception : " . $ex->getMessage();
+    }       
 
   }
 
