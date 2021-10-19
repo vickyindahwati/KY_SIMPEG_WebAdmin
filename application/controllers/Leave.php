@@ -186,15 +186,15 @@ class Leave extends CI_Controller{
 
       /*Generate QRCode*/
       $arrQRCodeParam['data']   = $rsLeaveDetail['no_reference'];
-      $arrQRCodeParam['savename'] = FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg';
+      $arrQRCodeParam['savename'] = FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
       $arrQRCodeParam['size']   = 1024;
       $this->ciqrcode->generate( $arrQRCodeParam );
 
       // echo FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
 
-      if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg' ) ){
-        // $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.jpg';
-        $pathQRCode = '/var/www/simpeg/KY_SIMPEG_WebAdmin/uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg';
+      if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png' ) ){
+        $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
+        // $pathQRCode = '/var/www/simpeg/KY_SIMPEG_WebAdmin/uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.jpg';
       }
 
       // echo "<br><br>" . $pathQRCode;

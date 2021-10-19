@@ -110,7 +110,8 @@ define('CONST_PATH_LHKPN','https://simpeg.komisiyudisial.go.id/uploads/files/pro
 define('CONST_PATH_NPWP','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/npwp/');
 define('CONST_PATH_TASPEN','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/taspen/');
 
-define('CONST_IMG_QRCODE','http://simpeg.komisiyudisial.go.id/uploads/files/leave/qrcode/');
+// define('CONST_IMG_QRCODE','http://simpeg.komisiyudisial.go.id/uploads/files/leave/qrcode/');
+define('CONST_IMG_QRCODE', '/var/www/simpeg/KY_SIMPEG_WebAdmin/uploads/files/leave/qrcode/');
 
 /*
 |--------------------------------------------------------------------------
