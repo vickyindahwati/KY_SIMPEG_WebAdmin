@@ -190,13 +190,13 @@ class Leave extends CI_Controller{
       $arrQRCodeParam['size']   = 1024;
       $this->ciqrcode->generate( $arrQRCodeParam );
 
-      echo FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
+      // echo FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png';
 
       if( file_exists( FCPATH . 'uploads/files/leave/qrcode/' . $rsLeaveDetail['no_reference'] . '.png' ) ){
         $pathQRCode = CONST_IMG_QRCODE . $rsLeaveDetail['no_reference'] . '.png';
       }
 
-      echo "<br><br>" . $pathQRCode;
+      // echo "<br><br>" . $pathQRCode;
 
       $this->ci->export_lib->exportLeaveForm( $rsLeaveDetail, $rsUserAnualLeaveDetail, $rsLastLeaveNote['catatan_cuti'], $pathQRCode );
     } catch (Exception $ex) {
