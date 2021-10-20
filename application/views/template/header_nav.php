@@ -270,6 +270,6 @@
     }
 
     $(document).ready(function(){
-      getInAppNotification();
+      // getInAppNotification();
     })
   </script>
