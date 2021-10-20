@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('static')?>/plugins/datatables/dataTables.bootstrap.css">
 <!-- bootstrap datepicker -->
 <link rel="stylesheet" href="<?php echo base_url('static');?>/plugins/datepicker/datepicker3.css">
-<link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
+<link href="https://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
 
 <style type="text/css">
     td.wrapok {

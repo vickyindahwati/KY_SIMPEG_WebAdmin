@@ -1,5 +1,5 @@
 <link href="<?php echo base_url('static');?>/plugins/jquery-upload-file/uploadfile.css" rel="stylesheet">
-<link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
+<link href="https://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
 <!-- bootstrap datepicker -->
 <link rel="stylesheet" href="<?php echo base_url('static');?>/plugins/datepicker/datepicker3.css">
 <!-- bootstrap wysihtml5 - text editor -->

@@ -1,5 +1,5 @@
 <!-- DataTables -->
-<link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
+<link href="https://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
 <style type="text/css">
     td.wrapok {
         white-space: nowrap;
