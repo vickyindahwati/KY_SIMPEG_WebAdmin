@@ -3,7 +3,7 @@
  * version: 3.1.10
  * @requires jQuery v1.5 or later & form plugin
  * Copyright (c) 2013 Ravishanker Kusuma
- * http://hayageek.com/
+ * http://https://hayageek.github.io.com/
  */
 (function ($) {
     if($.fn.ajaxForm == undefined) {
