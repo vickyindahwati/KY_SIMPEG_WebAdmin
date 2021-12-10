@@ -97,20 +97,20 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 /*CONST MODULE ACCESS*/
 define('CONST_MOD_EMPLOYEE', 'PEGAWAI');
 
-define('CONST_IMG_PROFILE', 'https://simpeg.komisiyudisial.go.id/uploads/photos/profile/original/');
-define('CONST_IMG_PROFILE_DEFAULT', 'https://simpeg.komisiyudisial.go.id/static/photos/unknown.png');
-define('CONST_JOB_EXPERIENCE', 'https://simpeg.komisiyudisial.go.id/uploads/files/job_experience/');
+define('CONST_IMG_PROFILE', 'https://dev-simpeg.komisiyudisial.go.id/uploads/photos/profile/original/');
+define('CONST_IMG_PROFILE_DEFAULT', 'https://dev-simpeg.komisiyudisial.go.id/static/photos/unknown.png');
+define('CONST_JOB_EXPERIENCE', 'https://dev-simpeg.komisiyudisial.go.id/uploads/files/job_experience/');
 
-define('CONST_PATH_KARTU_PEGAWAI','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/kartu_pegawai/');
-define('CONST_PATH_KTP','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/ktp/');
-define('CONST_PATH_ASKES_BPJS','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/askes_bpjs/');
-define('CONST_PATH_BUKU_TABUNGAN','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/buku_tabungan/');
-define('CONST_PATH_KARTU_KELUARGA','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/kartu_keluarga/');
-define('CONST_PATH_LHKPN','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/lhkpn/');
-define('CONST_PATH_NPWP','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/npwp/');
-define('CONST_PATH_TASPEN','https://simpeg.komisiyudisial.go.id/uploads/files/profiles/taspen/');
+define('CONST_PATH_KARTU_PEGAWAI','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/kartu_pegawai/');
+define('CONST_PATH_KTP','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/ktp/');
+define('CONST_PATH_ASKES_BPJS','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/askes_bpjs/');
+define('CONST_PATH_BUKU_TABUNGAN','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/buku_tabungan/');
+define('CONST_PATH_KARTU_KELUARGA','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/kartu_keluarga/');
+define('CONST_PATH_LHKPN','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/lhkpn/');
+define('CONST_PATH_NPWP','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/npwp/');
+define('CONST_PATH_TASPEN','https://dev-simpeg.komisiyudisial.go.id/uploads/files/profiles/taspen/');
 
-// define('CONST_IMG_QRCODE','http://simpeg.komisiyudisial.go.id/uploads/files/leave/qrcode/');
+// define('CONST_IMG_QRCODE','http://dev-simpeg.komisiyudisial.go.id/uploads/files/leave/qrcode/');
 define('CONST_IMG_QRCODE', '/var/www/simpeg/KY_SIMPEG_WebAdmin/uploads/files/leave/qrcode/');
 define('CONST_IMG_ASSET', '/var/www/simpeg/KY_SIMPEG_WebAdmin/static/');
 

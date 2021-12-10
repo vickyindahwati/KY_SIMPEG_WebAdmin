@@ -1,3 +1,3 @@
-var indexURL = 'https://simpeg.komisiyudisial.go.id/index.php';
+var indexURL = 'https://dev-simpeg.komisiyudisial.go.id/index.php';
 var dataSeparator = 'Þ';
-var pathPhotoProfile = 'https://simpeg.komisiyudisial.go.id/uploads/photos/profile/original/';
+var pathPhotoProfile = 'https://dev-simpeg.komisiyudisial.go.id/uploads/photos/profile/original/';
