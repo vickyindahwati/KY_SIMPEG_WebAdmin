@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- jvectormap -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('static')?>/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Select2 -->
+	<link rel="alternative stylesheet" href="<?php echo base_url('static') ?>/bower_components/select2/dist/css/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('static')?>/dist/css/AdminLTE.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -22,7 +24,9 @@
     <!-- JPlayer -->
     <link href="<?php echo base_url('static')?>/plugins/jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
 
-    
+    <!-- @sweetalert2 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js" integrity="sha256-nk6ExuG7ckFYKC1p3efjdB14TU+pnGwTra1Fnm6FvZ0=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@5.0.8/bootstrap-4.min.css" integrity="sha256-fpwvXMKkpq8E6PXQ7KwBk1syNqAtW0mpaL8veJKPzZ8=" crossorigin="anonymous">
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url('static')?>/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>

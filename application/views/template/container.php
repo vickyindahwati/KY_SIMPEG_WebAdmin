@@ -43,6 +43,8 @@
     <script src="<?php echo base_url('static')?>/bootstrap/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="<?php echo base_url('static')?>/plugins/fastclick/fastclick.min.js"></script>
+    <!-- Select2 -->
+    <script src="<?php echo base_url('static') ?>/bower_components/select2/dist/js/select2.full.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo base_url('static')?>/dist/js/app.min.js"></script>
     <!-- Sparkline -->

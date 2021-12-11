@@ -72,8 +72,18 @@
               </li>
               */?>
               <?php } ?>
-              
-                     
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">New Menu <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="<?= base_url() ?>index.php/mainmenu">Main Menu</a></li>
+                  <li><a href="<?= base_url() ?>index.php/diklat">Diklat</a></li>
+                  <li><a href="<?= base_url() ?>index.php/jabatan">Jabatan</a></li>
+                  <li><a href="<?= base_url() ?>index.php/daftar_pengajuan_diklat">Daftar Pengajuan Diklat</a></li>
+                  <li><a href="<?= base_url() ?>index.php/pengajuan_diklat">Pengajuan Diklat</a></li>
+                  <li><a href="<?= base_url() ?>index.php/laporan_feedback_diklat">Laporan Feedback Diklat</a></li>
+                </ul>
+              </li>
           </ul>
           <!--form class="navbar-form navbar-left" role="search">
             <div class="form-group">
